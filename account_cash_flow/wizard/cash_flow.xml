@@ -8,14 +8,13 @@
             <field name="arch" type="xml">
                 <form string="Generate Cash Flow">
                     <group>
+                        <field name="start_date"/>
                         <field name="end_date"/>
                         <field name="start_amount"/>
-                        <field name="account_ids" widget="many2many_tags" domain="[('internal_type', '=', 'liquidity')]"/>
-                        <field name="ignore_outstanding"/>
-                        <field name="print_report"/>
+                        <field name="company_id" groups="base.group_multi_company" />
                     </group>
                     <footer>
-                        <button name="button_calculate" string="Generate" type="object"
+                        <button name="button_calculate"  string="Generate" type="object"
                             class="oe_highlight" />
                     </footer>
                 </form>
@@ -29,14 +28,8 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem id="menu_cash_flow_wizard" name="Cash Flow" parent="l10n_br_account.menu_br_payments"
+        <menuitem id="menu_cash_flow_wizard" name="Cash Flow" parent="base.next_id_64"
             action="action_account_cash_flow_wizard_form" sequence="20"/>
-
-        <menuitem sequence="3"
-            id="menu_br_receivable"
-            name="Receber e Pagar"
-            action="l10n_br_account.action_receivable_move_line"
-            parent="l10n_br_account.menu_br_payments"/>
 
     </data>
 </openerp>

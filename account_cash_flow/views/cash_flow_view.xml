@@ -36,10 +36,10 @@
         </record>
 
         <record id="account_cash_flow_report_tree" model="ir.ui.view">
-            <field name="name">Linhas do Fluxo de Caixa</field>
+            <field name="name">account.cash.flow.line.tree</field>
             <field name="model">account.cash.flow.line</field>
             <field name="arch" type="xml">
-                <tree string="Linhas" decoration-danger="amount&lt;0">
+                <tree string="Linhas" colors="red:amount &lt; 0">
                     <field name="name" />
                     <field name="partner_id" />
                     <field name="account_id" />
@@ -54,7 +54,7 @@
         </record>
 
         <record id="account_cash_flow_report_action" model="ir.actions.act_window">
-            <field name="name">Linhas do Fluxo de Caixa</field>
+            <field name="name">action.account.cash.flow.tree</field>
             <field name="res_model">account.cash.flow.line</field>
             <field name="view_mode">tree,graph</field>
         </record>
